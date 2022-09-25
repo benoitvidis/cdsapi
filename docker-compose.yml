@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  cdsapi:
+    image: node:18-alpine
+    working_dir: /opt/app
+    user: node
+    volumes:
+      - .:/opt/app

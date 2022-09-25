@@ -1,0 +1,29 @@
+{
+  "name": "cdsapi",
+  "version": "0.0.1",
+  "description": "Node.js API to access the Copernicus Climate Data Store (CDS)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benoitvidis/cdsapi.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cds",
+    "weather",
+    "opendata"
+  ],
+  "author": "Benoît Vidis",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "node-fetch": "^3.2.10",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "prettier": "^2.7.1"
+  }
+}
