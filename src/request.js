@@ -28,6 +28,11 @@ class CDSApiRequest extends EventEmitter {
     return v
   }
 
+  /**
+   * The promise will resolve when the request is ready for download
+   *
+   * @returns {Promise<CDSApiRequestState>}
+   */
   async complete() {
     if (this._currentState?.state === 'completed') return this._currentState
     if (this._currentState?.state === 'failed')
@@ -42,10 +47,16 @@ class CDSApiRequest extends EventEmitter {
     return new Promise((resolve, reject) => setTimeout(() => this.complete().then(resolve).catch(reject), this.sleep))
   }
 
+  /**
+   * @returns {Promise<CDSApiRequestState>}
+   */
   async state() {
     return this._currentRequest || this._currentState
   }
 
+  /**
+   * @returns {Promise<CDSApiRequestState>}
+   */
   async _request() {
     const response = await fetch(this.url, this.options)
     const body = await response.text()
